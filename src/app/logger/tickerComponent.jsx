@@ -4,15 +4,14 @@ import stockPriceService from "./stockPriceService";
 import "./tickerComponent.scss";
 import logger from "./logger";
 
-function TickerComponent() {
+function TickerComponent(props) {
   const [ticker, setTicker] = useState("AAPL");
   const currentPrice = stockPriceService.fetchPricesForTicker(ticker);
   const componentRef = useRef();
 
-  logger.info("TickerComponent", "Begin Render");
-  logger.info("TickerComponent", `ticker= ${ticker}`, "useState");
+  logger.info(`TickerComponent (${props.id})`, `Render`);
+  logger.info(`TickerComponent (${props.id})`, `ticker: ${ticker}`, "useState");
 
-  // highlight when this component is (re)-rendered
   setTimeout(() => {
     componentRef.current.classList.add("render");
     setTimeout(() => {
@@ -22,11 +21,11 @@ function TickerComponent() {
 
   const onChange = (event) => {
     logger.info(
-      "TickerComponent",
+      `TickerComponent (${props.id})`,
       `[user action] - new ticker selected (${event.target.value})`
     );
     logger.info(
-      "TickerComponent",
+      `TickerComponent (${props.id})`,
       `setTicker: ${event.target.value}`,
       "useState"
     );
@@ -34,8 +33,8 @@ function TickerComponent() {
   };
 
   return (
-    <div className="ticker" ref={componentRef}>
-      <select onChange={onChange} value={ticker}>
+    <div className={`ticker ${props.theme}`} ref={componentRef}>
+      <select id="lang" onChange={onChange} value={ticker}>
         <option value="">Select</option>
         <option value="NFLX">NFLX</option>
         <option value="FB">FB</option>
