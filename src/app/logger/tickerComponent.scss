@@ -1,0 +1,25 @@
+.ticker {
+  width: 250px;
+  height: 250px;
+  background-color: #25303d;
+  float: left;
+  margin: 10px;
+
+  &.render {
+    transition: all 600ms ease-out;
+    background-color: black;
+    border: 4px dashed orange;
+  }
+
+  .ticker-name {
+    font-size: 25px;
+    color: #ffc310;
+    text-align: center;
+    margin: 60px auto 5px auto;
+  }
+
+  .ticker-price {
+    color: #61cdca;
+    text-align: center;
+  }
+}
