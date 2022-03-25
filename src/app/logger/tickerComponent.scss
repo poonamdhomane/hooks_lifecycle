@@ -1,9 +1,24 @@
 .ticker {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: #25303d;
-  float: left;
   margin: 10px;
+
+  &.light {
+    background-color: #6ff1f1;
+
+    &.render {
+      background-color: #1fb6b6;
+    }
+
+    .ticker-name {
+      color: #1d1b1b;
+    }
+
+    .ticker-price {
+      color: #6612ee;
+    }
+  }
 
   &.render {
     transition: all 600ms ease-out;
@@ -15,7 +30,7 @@
     font-size: 25px;
     color: #ffc310;
     text-align: center;
-    margin: 60px auto 5px auto;
+    margin: 40px auto 5px auto;
   }
 
   .ticker-price {

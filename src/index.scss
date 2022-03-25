@@ -8,6 +8,15 @@ body * {
   box-sizing: border-box;
 }
 
+.app {
+  width: 230px;
+
+  &.render {
+    transition: all 600ms ease-out;
+    border: 4px dashed orange;
+  }
+}
+
 #btnMount {
   width: 100px;
   height: 20px;
@@ -23,8 +32,8 @@ body * {
 #logger {
   font-size: 15px;
   position: absolute;
-  top: 65px;
-  left: 270px;
+  top: 120px;
+  left: 220px;
 
   li {
     padding: 3px 2px;
